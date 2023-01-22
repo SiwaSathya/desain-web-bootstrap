@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+        .checked {
+        color: orange;
+      }
+    </style>
+    <title>Desa-Stinasi Desa Wisata</title>
+</head>
+<body>
+    <header class="p-3 text-white sticky-xl-top" style="background-color: rgb(216, 214, 214);">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use src="assets/img/logo.png"/></svg> -->
+              <img class="bi me-2" width="150" height="40" role="img" aria-label="Bootstrap" src="assets/img/logo.png" alt="">
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="index.html" class="nav-link px-2 text-dark">Beranda</a></li>
+              <li><a href="desa_wisata.html" class="nav-link px-2 text-dark">Desa Wisata</a></li>
+              <li><a href="list_akomodasi.html" class="nav-link px-2 text-secondary">List Akomodasi</a></li>
+              <li><a href="saran.html" class="nav-link px-2 text-dark">Saran dan Masukan</a></li>
+            </ul>
+    
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+              <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+            </form>
+          </div>
+        </div>
+      </header>
+      <main style="min-height: 100vh;">
+        <div class="shadow p-3 mb-5 bg-body rounded">
+            <div class="row">
+              <div class="col">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Kategori</label
+                >
+                <select
+                  id="jenis"
+                  class="form-select"
+                  aria-label="Default select example"
+                >
+                  <option value="Hotel">Hotel</option>
+                  <option value="Kendaraan">Kendaraan</option>
+                  <option value="Lainnya">Lainnya</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Check In</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="checkin"
+                  readonly="readonly"
+                  placeholder="masukan tanggal checkin"
+                />
+              </div>
+              <div class="col">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Check Out</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  readonly="readonly"
+                  id="checkout"
+                  placeholder="masukan tanggal checkout"
+                />
+              </div>
+              <div class="col" style="margin-top: 1.8%">
+                <a id="cari" type="button" class="btn btn-success">CARI</a>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-1 ms-3" id="divHotel" style="display: none;">
+            <div class="col-sm-3">
+              <div class="card" style="width: 18rem">
+                <img src="assets/img/hotel1.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Jatiluwih Villa</h5>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <h5>1.500.000</h5>
+                  <a href="#" class="btn btn-primary" onclick="booking('Jatiluwih Villa','500.000')">Booking</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card" style="width: 18rem">
+                <img src="assets/img/hotel2.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Amankila</h5>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <h5>1.500.000</h5>
+                  <a href="#" class="btn btn-primary" onclick="booking('Amankila','500.000')">Booking</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card" style="width: 18rem">
+                <img src="assets/img/hotel3.webp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Villa Bangli</h5>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <h5>1.500.000</h5>
+                  <a href="#" class="btn btn-primary" onclick="booking('Villa Bangli','500.000')">Booking</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card" style="width: 18rem">
+                <img src="assets/img/hotel4.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Villa Gendu</h5>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <h5>1.500.000</h5>
+                  <a href="#" class="btn btn-primary" onclick="booking('Villa Gendu','500.000')">Booking</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-1 ms-3" id="divKendaraan" style="display: none;">
+            <div class="col-sm-3">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="assets/img/mobil1.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Alphard</h5>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <h5>5.500.000</h5>
+                  <a
+                    href="#"
+                    class="btn btn-success"
+                    onclick="booking('Alphard','5.500.000')"
+                    >Booking</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="assets/img/mobil2.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Avanza</h5>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <h5>1.500.000</h5>
+                  <a href="#" class="btn btn-success" onclick="booking('Avanza','1.500.000')">Booking</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="assets/img/mobil3.webp"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Veloz</h5>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <h5>1.500.000</h5>
+                  <a href="#" class="btn btn-success" onclick="booking('Veloz','1.500.000')">Booking</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="assets/img/mobil4.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Mobil tahanan</h5>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <h5>500.000</h5>
+                  <a href="#" class="btn btn-success" onclick="booking('Kijang Super','500.000')">Booking</a>
+                </div>
+              </div>
+            </div>
+</div>
+<div
+class="modal fade"
+id="modalForm"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="judulModal">Modal title</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <label for="harga" class="form-label">Harga</label>
+      <input
+        type="text"
+        readonly="readonly"
+        id="harga"
+        class="form-control"
+        placeholder="Disabled input"
+      />
+
+      <label for="qty" class="form-label">Qty</label>
+      <input
+        type="number"
+        id="qty"
+        class="form-control"
+        placeholder="Disabled input"
+      />
+
+      <label for="total" class="form-label">Total</label>
+      <input
+        type="text"
+        readonly="readonly"
+        id="total"
+        class="form-control"
+        placeholder="Disabled input"
+      />
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal"
+      >
+        Close
+      </button>
+      <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="sweet()">
+        Save changes
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+      </main>
+      <footer class="py-3 bg-dark " >
+        <div class="container">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Beranda</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Desa Wisata</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2023 SiwaCompany, Inc</p>
+          </div>
+      </footer>
+</body>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<link
+href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+rel="stylesheet"
+/>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="javascrip.js"></script>
+</html>
