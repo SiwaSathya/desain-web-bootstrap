@@ -50,3 +50,10 @@ $(function () {
         }
     }, 1000);
 });
+
+function delayFunction() {
+    // tambahkan delay sebelum submit form
+    setTimeout(function() {
+      document.querySelector('form').submit();
+    }, 2000); // 3000 milidetik atau 3 detik delay
+  }
