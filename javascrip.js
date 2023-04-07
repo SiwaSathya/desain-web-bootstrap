@@ -55,5 +55,6 @@ function delayFunction() {
     // tambahkan delay sebelum submit form
     setTimeout(function() {
       document.querySelector('form').submit();
-    }, 2000); // 3000 milidetik atau 3 detik delay
+      return location.href = "index.html"
+    }, 2000) ; // 3000 milidetik atau 3 detik delay
   }
