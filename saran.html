@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <title>Document</title>
+    <title>Input</title>
 </head>
 <body>
     <header class="p-3 text-white sticky-xl-top" style="background-color: rgb(216, 214, 214);">
@@ -22,7 +22,7 @@
             </a>
     
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="index.html" class="nav-link px-2 text-dark">Beranda</a></li>
+              <li><a href="index.php" class="nav-link px-2 text-dark">Beranda</a></li>
               <li><a href="desa_wisata.html" class="nav-link px-2 text-dark">Desa Wisata</a></li>
               <li><a href="list_akomodasi.html" class="nav-link px-2 text-dark">List Akomodasi</a></li>
               <li><a href="saran.html" class="nav-link px-2 text-secondary">Saran dan Masukan</a></li>
@@ -35,18 +35,16 @@
         </div>
       </header>
       <main style="min-height: 100vh;">
-        <form class="mx-auto d-block w-25 p-5">
+        <form class="mx-auto d-block w-25 p-5" action="create.php" method="POST">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <label for="exampleInputEmail1" class="form-label">No Telepon</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <label for="exampleInputEmail1" class="form-label">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <label for="exampleInputEmail1" class="form-label">Saran & Masukan</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="padding-bottom: 100%;">
+              <label for="nama" class="form-label">Name</label>
+              <input type="text" class="form-control" id="nama" aria-describedby="emailHelp" name="nama">
+              <label for="number" class="form-label">No Telepon</label>
+              <input type="text" class="form-control" id="nomor" aria-describedby="emailHelp" name="nomor">
+              <label for="addres" class="form-label">Alamat</label>
+              <input type="text" class="form-control" id="addres" aria-describedby="emailHelp" name="addres">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" value="Tambahkan Data" class="btn btn-primary">Submit</button>
           </form>
       </main>
       <footer class="py-3 bg-dark " >
